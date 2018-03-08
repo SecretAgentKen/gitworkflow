@@ -145,11 +145,15 @@ This will show all local and remote branches and if they're tracking locally
 Push can push all changes or just the ones on the branch you're currently on. This updates your .gitconfig to do just the one you're on.
 
 ## git log is useless, I can't see a real history
-Add the following to your .gitconfig in your home directory:
+Add the following to your .gitconfig in your home directory under `[alias]`:
 
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s%Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
 
 Now, if you do a `git lg`, you'll get a tree view, pretty log history
+
+Other options include:
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 
 ## I've made a bunch of uncommitted changes that I don't want. Get back to my last commit
 DANGEROUS! Will change the contents of your working directory!
